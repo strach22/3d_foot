@@ -7,16 +7,14 @@ import camera from "./basic/Camera";
 import scene from "./basic/Scene";
 import resize from "./basic/Resize";
 import renderer from "./basic/Renderer";
-import cube from "./shapes/Cube";
 import light from "./basic/Light";
 
 scene.add(light);
 
 const loader = new GLTFLoader();
 let pie;
-loader.load("./src/shapes/feet.gltf", function (gltf) {
+loader.load("./src/shapes/pies.gltf", function (gltf) {
   pie = gltf.scene;
-  pie.position.set(-10, 85, 0);
   pie.scale.set(2, 2, 2);
 
   scene.add(pie);
@@ -27,7 +25,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // scene.add(cube);
 
 // camera.position.z = 5;
-camera.position.set(0, 0, 200);
+camera.position.set(0, 0, 100);
 
 function animate() {
   requestAnimationFrame(animate);
