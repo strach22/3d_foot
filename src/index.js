@@ -8,6 +8,8 @@ import scene from "./basic/Scene";
 import resize from "./basic/Resize";
 import renderer from "./basic/Renderer";
 import light from "./basic/Light";
+import cube from "./shapes/Cube";
+
 
 scene.add(light);
 
