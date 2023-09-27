@@ -25,13 +25,13 @@ loader.load("./src/shapes/cilindro.gltf", function (gltf) {
   cilindro = gltf.scene;
 
   scene.add(cilindro);
-  cilindro.position.set(...coordenadas.retropieDerecho)
-  cilindro.rotation.x+= coordenadas.antepieIzquierdo[3];
+  cilindro.position.set(...coordenadas.dedo1DistalIzquierdo)
+  cilindro.rotation.x+= coordenadas.dedo1DistalIzquierdo[3];
 });
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
-camera.position.set(0, 0, 250);
+camera.position.set(0, 0, 280);
 
 function animate() {
   requestAnimationFrame(animate);

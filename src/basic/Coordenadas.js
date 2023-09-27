@@ -8,7 +8,7 @@ const coordenadas = {
   mediopieDerecho: [-75, -18, 0, 0],
   retropieIzquierdo: [55, -22, -40,0],
   retropieDerecho: [-70, -22, -40, 0],
-  dedo1DistalIzquierdo: [60, -18, 0,0],
+  dedo1DistalIzquierdo: [52, -6, 90,0],
   dedo1DistalDerecho: [-75, -18, 0, 0],
   dedo1MedialIzquierdo: [60, -18, 0,0],
   dedo1MedialDerecho: [-75, -18, 0, 0],
