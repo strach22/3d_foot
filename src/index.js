@@ -14,6 +14,7 @@ scene.add(light);
 const loader = new GLTFLoader();
 let pie;
 let cilindro;
+
 loader.load("./src/shapes/pies.gltf", function (gltf) {
   pie = gltf.scene;
   pie.scale.set(6, 6, 6);
@@ -21,14 +22,15 @@ loader.load("./src/shapes/pies.gltf", function (gltf) {
   scene.add(pie);
 });
 
-loader.load("./src/shapes/cilindro.gltf", function (gltf) {
-  cilindro = gltf.scene;
+Object.keys(coordenadas).forEach((e) => {
+  loader.load("./src/shapes/cilindro.gltf", function (gltf) {
+    cilindro = gltf.scene;
 
-  scene.add(cilindro);
-  cilindro.position.set(...coordenadas.dedo1DistalIzquierdo)
-  cilindro.rotation.x+= coordenadas.dedo1DistalIzquierdo[3];
+    scene.add(cilindro);
+    cilindro.position.set(...coordenadas[e]);
+    cilindro.rotation.x += coordenadas[e][3];
+  });
 });
-
 const controls = new OrbitControls(camera, renderer.domElement);
 
 camera.position.set(0, 0, 280);
