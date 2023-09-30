@@ -8,6 +8,7 @@ import resize from "./basic/Resize";
 import renderer from "./basic/Renderer";
 import light from "./basic/Light";
 import coordenadas from "./basic/Coordenadas";
+import patologias from "./basic/Patologias";
 
 scene.add(light);
 
@@ -22,8 +23,8 @@ loader.load("./assets/shapes/pies.gltf", function (gltf) {
   scene.add(pie);
 });
 
-Object.keys(coordenadas).forEach((e) => {
-  loader.load("./assets/shapes/cilindro.gltf", function (gltf) {
+Object.keys(coordenadas).forEach((e,i) => {
+  loader.load("./assets/shapes/"+patologias[i%patologias.length], function (gltf) {
     cilindro = gltf.scene;
 
     scene.add(cilindro);
