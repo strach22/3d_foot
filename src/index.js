@@ -16,7 +16,7 @@ const loader = new GLTFLoader();
 let pie;
 let cilindro;
 
-loader.load("./assets/shapes/pies.gltf", function (gltf) {
+loader.load("./resources/shapes/pies.gltf", function (gltf) {
   pie = gltf.scene;
   pie.scale.set(6, 6, 6);
 
@@ -24,7 +24,7 @@ loader.load("./assets/shapes/pies.gltf", function (gltf) {
 });
 
 Object.keys(coordenadas).forEach((e,i) => {
-  loader.load("./assets/shapes/"+patologias[i%patologias.length], function (gltf) {
+  loader.load("./resources/shapes/"+patologias[i%patologias.length], function (gltf) {
     cilindro = gltf.scene;
 
     scene.add(cilindro);
