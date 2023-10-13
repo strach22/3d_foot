@@ -55,6 +55,8 @@ if (Array.isArray(arr) && arr.length > 0) {
     if (item[0] < 0 || item[1] < 0 || item[0] >= coordenadasArr.length) return;
     const ubic = coordenadasArr[item[0]];
     const patho = patologias[item[1]];
+    $('#legend').append("<table width='100%'><td align='center'>" + patho.replaceAll('_',' ').replace(".gltf","") + "</td><td align='center'>" + patho.replaceAll('_',' ').replace(".gltf","") + "</td></table>"); 
+    $('#legend').show()
     loader.load("./resources/shapes/" + patho, function (gltf) {
       shape = gltf.scene;
 

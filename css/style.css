@@ -1,4 +1,11 @@
-body{
-    margin: 0;
-    overflow: hidden;
+body {
+  margin: 0;
+  overflow: hidden;
+}
+#legend {
+  width: 100px;
+  border-radius: 3px;
+  background: rgb(209, 204, 204,0.5);
+  padding: 10px;
+  position: absolute;
 }
