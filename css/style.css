@@ -3,9 +3,9 @@ body {
   overflow: hidden;
 }
 #legend {
-  width: 100px;
   border-radius: 3px;
-  background: rgb(209, 204, 204,0.5);
+  border: 1px solid;
   padding: 10px;
+  margin: 5px;
   position: absolute;
 }
