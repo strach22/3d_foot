@@ -51,33 +51,52 @@ animate();
 resize.start(renderer);
 
 if (Array.isArray(arr) && arr.length > 0) {
+  const showLegend =
+    !arr.filter((e) => e[0] == -1)[0] ||
+    !(arr.filter((e) => e[0] == -1)[0][1] == 0);
+  let filtrado = arr.filter((e) => e[0] >= 0 ).map((e) => e[1]);
+  filtrado = filtrado.filter((item, index) => {
+    return filtrado.indexOf(item) === index;
+  });
+  if (showLegend) {
+    console.log(filtrado)
+    filtrado.forEach((item) => {
+      const patho = patologias[item];
+      $("#legendTable").append(
+        "<tr></tr><td align='center'><img src='./resources/images/" +
+          patho.replace(".gltf", ".png") +
+          "'></img></td><td align='left'>" +
+          patho.replaceAll("_", " ").replace(".gltf", "").toUpperCase() +
+          "</td></tr>"
+      );
+      $("#legend").show();
+    });
+  }
   arr.forEach((item) => {
     if (item[0] < 0 || item[1] < 0 || item[0] >= coordenadasArr.length) return;
     const ubic = coordenadasArr[item[0]];
     const patho = patologias[item[1]];
-    $('#legend').append("<table width='100%'><td align='center'><img src='./resources/images/" + patho.replace(".gltf",".png") + "'></img></td><td align='center'>" + patho.replaceAll('_',' ').replace(".gltf","") + "</td></table>"); 
-    $('#legend').show()
     loader.load("./resources/shapes/" + patho, function (gltf) {
       shape = gltf.scene;
 
       scene.add(shape);
       shape.position.set(...coordenadas[ubic]);
       shape.rotation.x += coordenadas[ubic][3];
-      if (item[0] < 8) {
-        shape.scale.set(3, 3, 3);
-      }
+      shape.scale.set(coordenadas[ubic][4],coordenadas[ubic][4],coordenadas[ubic][4]);
     });
   });
 } else {
   coordenadasArr.forEach((e, i) => {
     loader.load(
       "./resources/shapes/" + patologias[i % patologias.length],
+      // "./resources/shapes/" + patologias[0],
       function (gltf) {
         shape = gltf.scene;
 
         scene.add(shape);
         shape.position.set(...coordenadas[e]);
         shape.rotation.x += coordenadas[e][3];
+        shape.scale.set(coordenadas[e][4],coordenadas[e][4],coordenadas[e][4]);
       }
     );
   });

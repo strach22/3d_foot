@@ -24,6 +24,12 @@ const patologias = [
   "dedo_garra_invertido.gltf",
   "dedo_garra.gltf",
   "dedo_acabalgado.gltf",
+  "hematoma.gltf",
+  "herida.gltf",
+  "paciente_diabetico.gltf",
+  "una_involuta.gltf",
+  "onicocauxis.gltf",
+  "hallux_valgus_pronunciado.gltf",
 ];
 
 export default patologias;
