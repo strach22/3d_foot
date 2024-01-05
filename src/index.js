@@ -66,7 +66,7 @@ if (Array.isArray(arr) && arr.length > 0) {
         "<tr></tr><td align='center'><img src='./resources/images/" +
           patho.replace(".gltf", ".png") +
           "'></img></td><td align='left'>" +
-          patho.replaceAll("_", " ").replace(".gltf", "").toUpperCase() +
+          patho.replaceAll("_", " ").replace(".gltf", "").toUpperCase().replaceAll("UNA I",'UÑA I') +
           "</td></tr>"
       );
       $("#legend").show();
