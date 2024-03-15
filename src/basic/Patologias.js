@@ -11,7 +11,7 @@ const patologias = [
   "heloma_vascular.gltf",
   "heloma_septico.gltf",
   "heloma_neurovascular.gltf",
-  "heloma_milar.gltf",
+  "heloma_miliar.gltf",
   "heloma_interdigital_interno.gltf",
   "heloma_interdigital_externo.gltf",
   "heloma_fisurado.gltf",
@@ -30,6 +30,7 @@ const patologias = [
   "una_involuta.gltf",
   "onicocauxis.gltf",
   "hallux_valgus_pronunciado.gltf",
+  "verruga.gltf",
 ];
 
 export default patologias;
